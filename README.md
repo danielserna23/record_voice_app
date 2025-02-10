@@ -41,8 +41,9 @@ git clone https://github.com/danielserna23/record_voice_app.git
 ### 4️⃣ Configurar Firebase Storage
 
    - En la consola de Firebase, ve a Storage y habilita el almacenamiento.
-   -  Define las reglas de seguridad para permitir el acceso: (Para pruebas debe ser si autenticación)
+   -  Define las reglas de seguridad para permitir el acceso: (Para pruebas debe ser sin autenticación)
 
+```
    rules_version = '2';
     service firebase.storage {
         match /b/{bucket}/o {
@@ -51,13 +52,15 @@ git clone https://github.com/danielserna23/record_voice_app.git
             }
         }
     }
+ ```   
 
-    - Ejecuta el siguiente comando en la terminal para inicializar Firebase en tu proyecto:
-
+   - Ejecuta el siguiente comando en la terminal para inicializar Firebase en tu proyecto:
+    ```   
         flutterfire configure
+    ```   
 
-    - Ejecuta la aplicación:
-
+   - Ejecuta la aplicación:
+    ```   
         flutter run
-
+    ```   
 

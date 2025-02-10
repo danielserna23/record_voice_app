@@ -13,6 +13,7 @@ class AudioPlayerService {
     await _player.play(BytesSource(bytes));
   }
 
+  // Se deja la configuración para el estado de pausar y parar el audio
   Future<void> pause() async => await _player.pause();
 
   Future<void> stop() async {
