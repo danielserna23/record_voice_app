@@ -1,0 +1,7 @@
+{
+    "command-runner.commands": {
+        "build_runner": "dart run build_runner build --delete-conflicting-outputs",
+        "build_runner_watch": "dart run build_runner watch",
+        "slang": "flutter pub run slang"
+    }
+}

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "445297885072",
+    "firebase_url": "https://flutter-varios-a6a82-default-rtdb.firebaseio.com",
+    "project_id": "flutter-varios-a6a82",
+    "storage_bucket": "flutter-varios-a6a82.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445297885072:android:9db38ddec76f36c04dbd15",
+        "android_client_info": {
+          "package_name": "com.dserna.push_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445297885072-lvhqj8k7u4o5tm53inq0on0f7evvchvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD06Wl7felwdKLPMpRC074OYy_iDKMiBa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445297885072-lvhqj8k7u4o5tm53inq0on0f7evvchvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:445297885072:android:6a1cbb5107fccbbf4dbd15",
+        "android_client_info": {
+          "package_name": "com.telepatiadev.recordvoice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "445297885072-lvhqj8k7u4o5tm53inq0on0f7evvchvj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD06Wl7felwdKLPMpRC074OYy_iDKMiBa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "445297885072-lvhqj8k7u4o5tm53inq0on0f7evvchvj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
