@@ -17,9 +17,11 @@ AudioRecorderUseCase audioRecorderUseCase(Ref ref) {
 
 @riverpod
 AudioPlayerUseCase audioPlayerUseCase(Ref ref) {
+  final playerService = ref.watch(audioPlayerServiceProvider);
   return AudioPlayerUseCase(
+    playerService,
     AudioPlayerRepositoryImpl(
-      AudioPlayerService(),
+      playerService,
     ),
   );
 }
@@ -31,4 +33,9 @@ AudioUploadUseCase audioUploadUseCase(Ref ref) {
       StorageService(),
     ),
   );
+}
+
+@riverpod
+AudioPlayerService audioPlayerService(Ref ref) {
+  return AudioPlayerService();
 }

@@ -1,4 +1,6 @@
+import 'package:flutter/services.dart';
+
 abstract class AudioPlayerRepository {
-  Future<void> playAudio(String filePath);
-  Future<void> stopAudio();
+  Future<Uint8List> getAudioBytes(String filePath);
+  Future<void> dispose();
 }

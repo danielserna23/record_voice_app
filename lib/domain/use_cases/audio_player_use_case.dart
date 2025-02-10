@@ -1,10 +1,20 @@
-import '../domain.dart';
+import 'package:record_voice_app/domain/domain.dart';
+
+import '../../data/data.dart';
 
 class AudioPlayerUseCase {
-  final AudioPlayerRepository _repository;
+  final AudioPlayerService _audioPlayerService;
+  final AudioPlayerRepository _audioPlayerRepository;
 
-  AudioPlayerUseCase(this._repository);
+  AudioPlayerUseCase(this._audioPlayerService, this._audioPlayerRepository);
 
-  Future<void> playAudio(String filePath) => _repository.playAudio(filePath);
-  Future<void> stopAudio() => _repository.stopAudio();
+  Future<void> play(String filePath) async {
+    final bytes = await _audioPlayerRepository.getAudioBytes(filePath);
+    await _audioPlayerService.play(bytes);
+  }
+
+  Future<void> pause() async => await _audioPlayerService.pause();
+  Future<void> stop() async => await _audioPlayerService.stop();
+  Future<void> seek(Duration position) async =>
+      _audioPlayerService.seek(position);
 }

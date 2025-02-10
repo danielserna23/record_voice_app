@@ -19,3 +19,4 @@ linter:
     - no_logic_in_create_state
     - sort_child_properties_last
     - prefer_mixin
+

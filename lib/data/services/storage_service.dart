@@ -16,10 +16,11 @@ class StorageService {
     });
   }
 
+// decidí usar este método para borrar los audios de la nube, evitando así posibles cobros por espacio lleno por parte de Google
   Future<void> deleteAllFiles() async {
     final storageRef = FirebaseStorage.instance.ref().child(
           'voice_notes',
-        ); // Reemplaza 'voice_notes' con la ruta a tu carpeta
+        );
 
     try {
       final listResult = await storageRef.listAll();

@@ -21,7 +21,8 @@ class MainScreen extends ConsumerWidget {
             ElevatedButton(
               onPressed: () async {
                 if (audioState.value == AudioState.empty ||
-                    audioState.value == AudioState.stopped) {
+                    audioState.value == AudioState.stopped ||
+                    audioState.value == AudioState.loaded) {
                   await ref.read(audioProvider.notifier).startRecording();
                 } else {
                   await ref.read(audioProvider.notifier).stopRecording();

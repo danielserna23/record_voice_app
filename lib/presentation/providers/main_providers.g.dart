@@ -26,7 +26,7 @@ final audioRecorderUseCaseProvider =
 // ignore: unused_element
 typedef AudioRecorderUseCaseRef = AutoDisposeProviderRef<AudioRecorderUseCase>;
 String _$audioPlayerUseCaseHash() =>
-    r'0d35a1a5e041c7c6bf17914cc05b01bedda2aec8';
+    r'79b6f670d53c0c4d42661b371ac9e7e646f474d7';
 
 /// See also [audioPlayerUseCase].
 @ProviderFor(audioPlayerUseCase)
@@ -63,5 +63,24 @@ final audioUploadUseCaseProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef AudioUploadUseCaseRef = AutoDisposeProviderRef<AudioUploadUseCase>;
+String _$audioPlayerServiceHash() =>
+    r'92102d1c8bbcc116200f5493d4e24bc7a5269b7f';
+
+/// See also [audioPlayerService].
+@ProviderFor(audioPlayerService)
+final audioPlayerServiceProvider =
+    AutoDisposeProvider<AudioPlayerService>.internal(
+  audioPlayerService,
+  name: r'audioPlayerServiceProvider',
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$audioPlayerServiceHash,
+  dependencies: null,
+  allTransitiveDependencies: null,
+);
+
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
+typedef AudioPlayerServiceRef = AutoDisposeProviderRef<AudioPlayerService>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package

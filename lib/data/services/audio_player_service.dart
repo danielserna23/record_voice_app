@@ -1,40 +1,35 @@
-import 'dart:io';
-
 import 'package:audioplayers/audioplayers.dart';
-import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/services.dart';
 
 class AudioPlayerService {
-  final AudioPlayer _audioPlayer = AudioPlayer();
-  final FirebaseStorage _storage = FirebaseStorage.instance;
+  final AudioPlayer _player = AudioPlayer();
 
-  Future<void> playAudio(String filePath) async {
-    final newFile = File(filePath);
-    final ref =
-        _storage.ref().child('voice_notes/${newFile.uri.pathSegments.last}');
+  AudioPlayer get player => _player;
 
-    try {
-      final bytes = await ref.getData();
-      if (bytes != null) {
-        final player = AudioPlayer();
-        await player.play(BytesSource(bytes));
-      }
-    } catch (e) {
-      Exception(e);
+  Future<void> play(Uint8List bytes) async {
+    if (_player.state == PlayerState.playing) {
+      await _player.stop();
     }
+    await _player.play(BytesSource(bytes));
   }
 
-  Future<void> stopAudio() async {
-    await _audioPlayer.stop();
+  Future<void> pause() async => await _player.pause();
+
+  Future<void> stop() async {
+    await _player.stop();
+    await _player.release();
   }
 
-  Future<void> pauseAudio() async {
-    try {
-      if (_audioPlayer.state == PlayerState.playing) {
-        // Verifica el estado
-        await _audioPlayer.pause();
-      }
-    } catch (e) {
-      rethrow;
-    }
+  Future<void> seek(Duration position) async {
+    await _player.seek(position);
   }
+
+  Future<void> dispose() async {
+    await _player.dispose();
+  }
+
+  Stream<Duration> get positionChanged => _player.onPositionChanged;
+  Stream<Duration> get durationChanged => _player.onDurationChanged;
+  Stream<PlayerState> get playerStateChanged => _player.onPlayerStateChanged;
+  Stream<void> get playerComplete => _player.onPlayerComplete;
 }

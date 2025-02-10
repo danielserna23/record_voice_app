@@ -14,7 +14,7 @@ class AudioRecorderService {
       final directory = await getApplicationDocumentsDirectory();
       _filePath =
           '${directory.path}/audio_${DateTime.now().millisecondsSinceEpoch}.m4a';
-      const recordConfig = RecordConfig();
+      const recordConfig = RecordConfig(encoder: AudioEncoder.wav);
       await _recorder.start(recordConfig, path: _filePath!);
 
       return _filePath;

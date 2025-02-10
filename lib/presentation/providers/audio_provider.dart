@@ -1,5 +1,4 @@
 import 'package:record_voice_app/domain/domain.dart';
-import 'package:record_voice_app/presentation/providers/audio_player.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'audio_upload.dart';
@@ -47,9 +46,5 @@ class Audio extends _$Audio {
     } catch (e, stackTrace) {
       state = AsyncValue.error(e, stackTrace);
     }
-  }
-
-  Future<void> playAudio() async {
-    return await ref.watch(audioPlayerProvider.notifier).playAudio(filePath!);
   }
 }
